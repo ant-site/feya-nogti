@@ -295,6 +295,42 @@
     .pg__title { font-size: var(--v-t-lg); }
   }
 
+  /* ---- форма записи ------------------------------------------------------------ */
+  .book-form { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: var(--v-8) var(--v-9); align-items: start; }
+  .book-form__copy .v-label { display: block; margin-bottom: var(--v-5); }
+  .book-form__copy p { margin-top: var(--v-5); color: var(--v-ink-soft); max-width: 38ch; text-wrap: pretty; }
+  .book-form__copy .terms a { color: var(--v-ink); text-decoration: underline; text-underline-offset: .18em; }
+  .bf { display: grid; gap: var(--v-5); background: var(--v-surface); border: 1px solid var(--v-hair); border-radius: var(--v-radius); box-shadow: var(--v-e1); padding: var(--v-6); max-width: 36rem; }
+  .bf__row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--v-4); }
+  .bf__f { display: grid; gap: .4em; font-size: var(--v-t-sm); }
+  .bf__f > span { color: var(--v-ink-soft); }
+  .bf__f i { font-style: normal; opacity: .7; margin-left: .4em; }
+  .bf select, .bf input, .bf textarea { font: inherit; color: var(--v-ink); background: var(--v-canvas); border: 1px solid var(--v-hair-strong); border-radius: 8px; padding: .75em .9em; min-height: 46px; width: 100%; box-sizing: border-box; }
+  .bf textarea { resize: vertical; min-height: 5.5rem; }
+  .bf select:focus-visible, .bf input:focus-visible, .bf textarea:focus-visible { outline: 2px solid var(--v-accent); outline-offset: 1px; }
+  .bf [aria-invalid="true"] { border-color: var(--v-accent-deep); box-shadow: 0 0 0 2px rgb(168 67 45 / .18); }
+  .bf .v-btn { justify-self: start; border: 0; cursor: pointer; font: inherit; font-weight: 600; background: var(--v-accent); color: var(--v-accent-ink); }
+  .bf__msg { min-height: 1.4em; font-size: var(--v-t-sm); color: var(--v-ink-soft); text-wrap: pretty; }
+  .bf__msg a { color: var(--v-ink); text-decoration: underline; text-underline-offset: .18em; }
+  .bf.is-done > :not(.bf__done) { display: none; }
+  .bf__done { display: grid; gap: var(--v-4); justify-items: start; }
+  .bf__done[hidden] { display: none; }
+  .bf__done h3 { font-family: var(--v-font-display); font-weight: 400; font-size: var(--v-t-xl); }
+  .bf__done p { color: var(--v-ink-soft); max-width: 40ch; text-wrap: pretty; }
+  .bf__done p b { color: var(--v-ink); font-weight: 500; }
+  .bf__check circle { fill: none; stroke: var(--v-accent); stroke-width: 2.5; stroke-dasharray: 140; stroke-dashoffset: 140; animation: bf-draw .7s var(--v-ease-out) forwards; }
+  .bf__check path { fill: none; stroke: var(--v-accent); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 40; stroke-dashoffset: 40; animation: bf-draw .45s .55s var(--v-ease-out) forwards; }
+  @keyframes bf-draw { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) { .bf__check circle, .bf__check path { animation: none; stroke-dashoffset: 0; } }
+  .bf__sum { margin: 0; width: 100%; display: grid; }
+  .bf__sum div { display: grid; grid-template-columns: 9rem 1fr; gap: var(--v-3); padding: var(--v-3) 0; border-top: 1px solid var(--v-hair); font-size: var(--v-t-sm); }
+  .bf__sum div:last-child { border-bottom: 1px solid var(--v-hair); }
+  .bf__sum dt { color: var(--v-ink-soft); }
+  .bf__sum dd { margin: 0; color: var(--v-ink); }
+  .bf__act { display: flex; flex-wrap: wrap; align-items: center; gap: var(--v-3) var(--v-5); margin-top: var(--v-2); }
+  .bf__edit { font: inherit; font-size: var(--v-t-sm); color: var(--v-ink); background: none; border: 0; text-decoration: underline; text-underline-offset: .18em; cursor: pointer; padding: .5em 0; min-height: 44px; }
+  @media (max-width: 860px) { .book-form { grid-template-columns: 1fr; gap: var(--v-6); } .bf { padding: var(--v-5) var(--v-4); } .bf__row { grid-template-columns: 1fr; } }
+
   /* ---- акт 3 · стерильность ---------------------------------------------------- */
   .clean { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: var(--v-8) var(--v-9); align-items: center; }
   .clean__fig { border-radius: var(--v-radius); overflow: hidden; box-shadow: var(--v-e2); aspect-ratio: 16 / 10; background: var(--v-surface); }
@@ -409,7 +445,7 @@
       <a href="#priem" data-long><small>08</small>Приём</a>
       <a href="#master"><small>09</small>Мастер</a>
     </nav>
-    <a class="v-btn" href="https://wa.me/79773593590?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F." target="_blank" rel="noopener">Записаться</a>
+    <a class="v-btn" href="#forma">Записаться</a>
   </header>
 
   <main>
@@ -433,7 +469,7 @@
           <span class="v-label">Фея педикюра и маникюра · Алёна Ешану</span>
           <h1 class="v-display nd nd--xl">Маникюр и педикюр в Полярных Зорях лёгкой рукой</h1>
           <p>Подология и сложные стопы там же. Шесть лет опыта, цену называю до работы.</p>
-          <a class="v-btn" href="https://wa.me/79773593590?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F." target="_blank" rel="noopener">Записаться</a>
+          <a class="v-btn" href="#forma">Записаться</a>
         </div>
       </div>
     </section>
@@ -569,13 +605,12 @@
             <button class="chip" type="button" data-pick="m" aria-pressed="true">Маникюр</button>
             <button class="chip" type="button" data-pick="p" aria-pressed="false">Педикюр</button>
             <button class="chip" type="button" data-pick="s" aria-pressed="false">Больные ногти</button>
-            <button class="chip" type="button" data-pick="l" aria-pressed="false">Лазер · скоро</button>
           </div>
           <div class="pick__out" id="pick-out" aria-live="polite">
             <h3 id="pick-title">Руки: маникюр и покрытие</h3>
             <p id="pick-text">Маникюр без покрытия или с гель-лаком. Форму и длину подбираем под вашу жизнь, а не под картинку.</p>
             <div class="cta">
-              <a class="v-btn" href="https://wa.me/79773593590?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F." target="_blank" rel="noopener">Записаться</a>
+              <a class="v-btn" href="#forma">Записаться</a>
               <a id="pick-link" href="#ceny" class="nowrap">Смотреть цены</a>
             </div>
           </div>
@@ -584,7 +619,6 @@
           <img class="is-on" data-pic="m" src="assets/real/r0034.webp" alt="Маникюр: бордовое покрытие и объёмный дизайн" width="900" height="1200" loading="lazy">
           <img data-pic="p" src="assets/real/r0084.webp" alt="Педикюр: яркое покрытие на ногтях ног" width="900" height="1200" loading="lazy">
           <img data-pic="s" src="assets/real/r0080.webp" alt="Ортониксия: титановая нить на вросшем ногте" width="900" height="1200" loading="lazy">
-          <img data-pic="l" src="assets/laser-alena.webp" alt="Алёна в защитных очках в кабинете, где появится лазерная эпиляция" width="900" height="1200" loading="lazy">
           <span class="spark" id="spark" aria-hidden="true"></span>
         </figure>
       </div>
@@ -620,10 +654,10 @@
           <ul class="terms">
             <li><span><b>Цена до работы.</b> Не по ходу и не на кассе</span></li>
             <li><span><b>Дизайн и ремонт</b> – цена за один ноготь, «руки / ноги»</span></li>
-            <li><span><b>Лазерная эпиляция</b> – скоро, ориентировочно в 2027 году</span></li>
+            <li><span><b>Запись онлайн</b> – ниже, прямо на сайте: услуга, день и время</span></li>
           </ul>
           <div class="cta">
-            <a class="v-btn" href="https://wa.me/79773593590?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F." target="_blank" rel="noopener">Записаться</a>
+            <a class="v-btn" href="#forma">Записаться</a>
             <span>Напишите, что хотите сделать: назову цену и свободное время.</span>
           </div>
         </div>
@@ -632,7 +666,7 @@
             <div class="book__rings" aria-hidden="true"></div>
             <div class="book__pages">
         <article class="pg" style="--z:6" aria-label="Страница 1 из 6">
-          <header class="pg__head"><span class="pg__num">01 / 06</span><h3 class="pg__title">Руки</h3></header>
+          <header class="pg__head"><span class="pg__num">01 / 05</span><h3 class="pg__title">Руки</h3></header>
           <ul class="rows">
             <li><h4>Маникюр без покрытия</h4><span class="price v-nums">1200 ₽</span><p>Форма ногтей, уход за кутикулой.</p></li>
             <li><h4>Маникюр с покрытием</h4><span class="price v-nums">1700 ₽</span><p>Однотонное покрытие, цвет на ваш выбор.</p></li>
@@ -642,7 +676,7 @@
           <div class="pg__blank" aria-hidden="true"></div>
         </article>
         <article class="pg" style="--z:5" aria-label="Страница 2 из 6">
-          <header class="pg__head"><span class="pg__num">02 / 06</span><h3 class="pg__title">Ноги</h3></header>
+          <header class="pg__head"><span class="pg__num">02 / 05</span><h3 class="pg__title">Ноги</h3></header>
           <ul class="rows">
             <li><h4>Педикюр без покрытия</h4><span class="price v-nums">3000 ₽</span><p>Обработка стоп и ногтей.</p></li>
             <li><h4>Педикюр с покрытием</h4><span class="price v-nums">3500 ₽</span><p>Обработка стоп и ногтей и покрытие.</p></li>
@@ -650,7 +684,7 @@
           <div class="pg__blank" aria-hidden="true"></div>
         </article>
         <article class="pg" style="--z:4" aria-label="Страница 3 из 6">
-          <header class="pg__head"><span class="pg__num">03 / 06</span><h3 class="pg__title">Дизайн и ремонт</h3></header>
+          <header class="pg__head"><span class="pg__num">03 / 05</span><h3 class="pg__title">Дизайн и ремонт</h3></header>
           <ul class="rows">
             <li><h4>Дизайн одного ногтя</h4><span class="time">руки / ноги</span><span class="price v-nums">100 / 150 ₽</span><p>Цена за один ноготь.</p></li>
             <li><h4>Дизайн френч</h4><span class="time">руки / ноги</span><span class="price v-nums">600 / 700 ₽</span></li>
@@ -659,7 +693,7 @@
           <div class="pg__blank" aria-hidden="true"></div>
         </article>
         <article class="pg" style="--z:3" aria-label="Страница 4 из 6">
-          <header class="pg__head"><span class="pg__num">04 / 06</span><h3 class="pg__title">Подология</h3></header>
+          <header class="pg__head"><span class="pg__num">04 / 05</span><h3 class="pg__title">Подология</h3></header>
           <ul class="rows">
             <li><h4>Консультация</h4><span class="price v-nums">1000 ₽</span><p>Осмотр, разговор и план работ.</p></li>
             <li><h4>Установка титановой нити</h4><span class="price v-nums">3000 ₽</span><p>Ортониксия: исправляю вросший ноготь.</p></li>
@@ -669,16 +703,11 @@
           <div class="pg__blank" aria-hidden="true"></div>
         </article>
         <article class="pg" style="--z:2" aria-label="Страница 5 из 6">
-          <header class="pg__head"><span class="pg__num">05 / 06</span><h3 class="pg__title">Парафин</h3></header>
+          <header class="pg__head"><span class="pg__num">05 / 05</span><h3 class="pg__title">Парафин</h3></header>
           <ul class="rows">
             <li><h4>Горячий парафин</h4><span class="time">руки / ноги</span><span class="price v-nums">700 / 900 ₽</span><p>Смягчает кожу рук и ног.</p></li>
             <li><h4>Холодный парафин</h4><span class="time">руки / ноги</span><span class="price v-nums">400 / 500 ₽</span><p>Прохладный парафин для рук и ног.</p></li>
           </ul>
-          <div class="pg__blank" aria-hidden="true"></div>
-        </article>
-        <article class="pg" style="--z:1" aria-label="Страница 6 из 6">
-          <header class="pg__head"><span class="pg__num">06 / 06</span><h3 class="pg__title">Лазерная эпиляция</h3></header>
-          <div class="pg__soon"><b>Скоро в салоне</b><p>Пока эту услугу не делают. Лазерную эпиляцию планируем запустить ориентировочно в 2027 году. Цен пока нет: назову их, когда дата станет известна.</p><a href="https://wa.me/79773593590?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20%D0%BB%D0%B0%D0%B7%D0%B5%D1%80%D0%BD%D1%83%D1%8E%20%D1%8D%D0%BF%D0%B8%D0%BB%D1%8F%D1%86%D0%B8%D1%8E." target="_blank" rel="noopener">Узнать первой в WhatsApp</a></div>
           <div class="pg__blank" aria-hidden="true"></div>
         </article>
             </div>
@@ -690,7 +719,6 @@
           <button type="button" class="book__tab" data-go="2"><span>Дизайн</span><i></i></button>
           <button type="button" class="book__tab" data-go="3"><span>Больные ногти</span><i></i></button>
           <button type="button" class="book__tab" data-go="4"><span>Парафин</span><i></i></button>
-          <button type="button" class="book__tab" data-go="5"><span>Лазер · скоро</span><i></i></button>
             </div>
             <div class="book__ctl">
               <button type="button" class="book__btn" id="book-prev" aria-label="Предыдущая страница">←</button>
@@ -718,10 +746,9 @@
             <li><b>Осмотр и разговор</b><span>Что с ногтями и кожей, что можно делать, а чего пока нельзя</span></li>
             <li><b>План и цена</b><span>Называю до начала, а не по ходу работы</span></li>
             <li><b>Подология отдельно от дизайна</b><span>Для больных ногтей нужна не красота, а уход и лечение: так и работаю</span></li>
-            <li><b>Лазерная эпиляция – скоро</b><span>Планируем запустить ориентировочно в 2027 году</span></li>
           </ul>
           <div class="cta">
-            <a class="v-btn" href="https://wa.me/79773593590?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F." target="_blank" rel="noopener">Записаться</a>
+            <a class="v-btn" href="#forma">Записаться</a>
             <span>Не знаете, к кому идти с больным ногтем: напишите, скажу, чем помогу.</span>
           </div>
         </div>
@@ -738,7 +765,6 @@
             <p>Маникюр и педикюр делаю шесть лет: у каждого ногти свои, и подход к каждым свой.</p>
             <p>Если с ногтем беда, начинаем с осмотра и честного разговора, а не с покрытия поверх проблемы.</p>
             <p>Работаю со стопами со сложными нарушениями, исправляю вросшие ногти, восстанавливаю и протезирую ногтевые пластины.</p>
-            <p>Лазерную эпиляцию планирую запустить в салоне ориентировочно в 2027 году.</p>
           </div>
         </div>
         <figure class="master__fig" data-v-reveal="up" data-v-reveal-at="0.12 0.5">
@@ -784,6 +810,74 @@
       </div>
     </section>
 
+    <!-- 5 · ЗАПИСЬ ОНЛАЙН -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#faf7f2" id="forma" aria-label="Записаться онлайн">
+      <div class="v-wrap book-form">
+        <div class="book-form__copy" data-v-in data-v-stagger="60">
+          <span class="v-label">Запись онлайн</span>
+          <h2 class="v-display nd nd--lg">Запишитесь прямо здесь</h2>
+          <p>Выберите услугу, день и время приёма. Заявка уйдёт Алёне в WhatsApp, и она подтвердит запись ответом.</p>
+          <ul class="terms">
+            <li><span><b>Адрес:</b> Полярные Зори, улица Пушкина, 4</span></li>
+            <li><span><b>Часы:</b> вторник – суббота, приём с 9:00 до 21:30</span></li>
+            <li><span><b>Выходные:</b> воскресенье и понедельник</span></li>
+            <li><span><b>Запись:</b> раз в 2,5 часа, на 09:00, 11:30, 14:00, 16:30, 19:00</span></li>
+            <li><span><b>Телефон:</b> <a href="tel:+79773593590">+7 977 359-35-90</a></span></li>
+          </ul>
+        </div>
+        <form class="bf" id="bf" data-v-in novalidate>
+          <label class="bf__f"><span>Услуга</span>
+            <select id="bf-svc" required>
+              <option value="">Выберите услугу</option>
+              <option>Маникюр без покрытия – 1200 ₽</option>
+              <option>Маникюр с покрытием – 1700 ₽</option>
+              <option>Наращивание ногтей – 3000 ₽</option>
+              <option>Укрепление ногтей (акрил) – 300 ₽</option>
+              <option>Педикюр без покрытия – 3000 ₽</option>
+              <option>Педикюр с покрытием – 3500 ₽</option>
+              <option>Дизайн, френч, ремонт ногтя</option>
+              <option>Консультация (больные ногти) – 1000 ₽</option>
+              <option>Установка титановой нити – 3000 ₽</option>
+              <option>Протезирование ногтя</option>
+              <option>Горячий или холодный парафин</option>
+              <option>Не знаю, нужна консультация</option>
+            </select>
+          </label>
+          <div class="bf__row">
+            <label class="bf__f"><span>День <i>вт – сб</i></span><input type="date" id="bf-date"></label>
+            <label class="bf__f"><span>Время</span>
+              <select id="bf-time">
+                <option value="">Выберите время</option>
+                <option>09:00</option>
+                <option>11:30</option>
+                <option>14:00</option>
+                <option>16:30</option>
+                <option>19:00</option>
+              </select>
+            </label>
+          </div>
+          <label class="bf__f"><span>Ваше имя</span><input type="text" id="bf-name" autocomplete="given-name" required placeholder="Как к вам обращаться"></label>
+          <label class="bf__f"><span>Комментарий <i>необязательно</i></span><textarea id="bf-note" rows="3" placeholder="Например: вросший ноготь, нужна консультация"></textarea></label>
+          <button class="v-btn" type="submit">Отправить в WhatsApp</button>
+          <p class="bf__msg" id="bf-msg" role="status" aria-live="polite"></p>
+          <div class="bf__done" id="bf-done" role="status" tabindex="-1" hidden>
+            <svg class="bf__check" viewBox="0 0 48 48" width="56" height="56" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M14 25.5l7 7 13-15"/></svg>
+            <h3>Заявка составлена</h3>
+            <dl class="bf__sum">
+              <div><dt>Услуга</dt><dd id="bf-s-svc"></dd></div>
+              <div><dt>День и время</dt><dd id="bf-s-when"></dd></div>
+              <div><dt>Имя</dt><dd id="bf-s-name"></dd></div>
+            </dl>
+            <p><b>Осталось нажать «Отправить» в WhatsApp</b>: текст заявки уже написан. Когда Алёна получит сообщение, она ответит и подтвердит время записи.</p>
+            <div class="bf__act">
+              <a class="v-btn" id="bf-wa" href="#" target="_blank" rel="noopener">Открыть WhatsApp</a>
+              <button type="button" class="bf__edit" id="bf-edit">Изменить заявку</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
     <!-- 6 · ЗАПИСЬ: финал держит реплику, футер внутри сцены -->
     <section data-v-act="pin" data-v-span="1.4" id="zapis" aria-label="Записаться">
       <div data-v-stage>
@@ -801,7 +895,7 @@
               <a class="close__tel" href="tel:+79773593590">+7 977 359-35-90</a>
               <span><b>Алёна Ешану</b></span>
               <span>Полярные Зори, улица Пушкина, 4 – со стороны памятника воинам-интернационалистам</span>
-              <span>Ежедневно с 9:00 до 21:00</span>
+              <span>Вторник – суббота, приём с 9:00 до 21:30. Воскресенье и понедельник – выходные</span>
               <span>Маникюр, педикюр, подология, парафин</span>
               <span>Приём по записи</span>
               <a href="https://vk.ru/id618342856" target="_blank" rel="noopener">Или напишите ВКонтакте</a>
@@ -832,7 +926,7 @@
   "description": "Маникюр, педикюр, подология и парафин в Полярных Зорях. Алёна Ешану.",
   "url": "https://ant-site.github.io/feya-nogti",
   "telephone": "+79773593590",
-  "openingHours": "Mo-Su 09:00-21:00",
+  "openingHours": "Tu-Sa 09:00-21:30",
   "image": "https://ant-site.github.io/feya-nogti/assets/og.jpg",
   "address": { "@type": "PostalAddress", "streetAddress": "улица Пушкина, 4", "addressLocality": "Полярные Зори", "addressRegion": "Мурманская область", "addressCountry": "RU" },
   "sameAs": ["https://vk.ru/id618342856"]
@@ -846,15 +940,14 @@
     (function () {
       var topics = {
         m: { t: 'Руки: маникюр и покрытие', p: 'Маникюр без покрытия или с гель-лаком. Форму и длину подбираем под вашу жизнь, а не под картинку.' },
-        p: { t: 'Ноги: педикюр', p: 'Аппаратный педикюр: стопы, кутикула, покрытие или без. Снятие старого включено.' },
-        s: { t: 'Больной ноготь: подология', p: 'Сложные стопы, онихогрифоз, вросшие ногти (ортониксия, титановые нити), реставрация и протезирование ногтей. Сначала осмотр, потом план и цена.' },
-        l: { t: 'Лазерная эпиляция: скоро', p: 'Пока в салоне эту услугу не делают. Планируем запустить ориентировочно в 2027 году. Если хотите узнать первой, напишите.' }
+        p: { t: 'Ноги: педикюр', p: 'Педикюр: обработка стоп и ногтей, с покрытием или без.' },
+        s: { t: 'Больной ноготь: подология', p: 'Сложные стопы, онихогрифоз, вросшие ногти (ортониксия, титановые нити), реставрация и протезирование ногтей. Сначала осмотр, потом план и цена.' }
       };
       var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
       var pics = Array.prototype.slice.call(document.querySelectorAll('[data-pic]'));
       var out = document.getElementById('pick-out'), title = document.getElementById('pick-title'), text = document.getElementById('pick-text');
       var spark = document.getElementById('spark');
-      var pageOf = { m: 0, p: 1, s: 3, l: 5 };
+      var pageOf = { m: 0, p: 1, s: 3 };
       function choose(k, userAction) {
         chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.getAttribute('data-pick') === k)); });
         pics.forEach(function (im) { im.classList.toggle('is-on', im.getAttribute('data-pic') === k); });
@@ -924,6 +1017,42 @@
       new IntersectionObserver(function (es) { visible = es[0].isIntersecting; schedule(); }).observe(book);
       window.feyaBook = { go: go };
       render();
+    })();
+
+
+    // Форма записи: собирает заявку и открывает WhatsApp Алёны с готовым текстом.
+    (function () {
+      var form = document.getElementById('bf');
+      if (!form) return;
+      var svc = document.getElementById('bf-svc'), date = document.getElementById('bf-date'), time = document.getElementById('bf-time');
+      var done = document.getElementById('bf-done');
+      document.getElementById('bf-edit').addEventListener('click', function () { done.hidden = true; form.classList.remove('is-done'); svc.focus(); });
+      var nm = document.getElementById('bf-name'), note = document.getElementById('bf-note'), msg = document.getElementById('bf-msg');
+      var t = new Date(); var pad = function (n) { return String(n).padStart(2, '0'); };
+      function dayOff(v) { if (!v) return false; var p = v.split('-'); var w = new Date(+p[0], +p[1] - 1, +p[2]).getDay(); return w === 0 || w === 1; }
+      date.addEventListener('change', function () { if (dayOff(date.value)) { date.setAttribute('aria-invalid', 'true'); msg.textContent = 'В воскресенье и понедельник выходной. Выберите день со вторника по субботу.'; } else { msg.textContent = ''; } });
+      date.min = t.getFullYear() + '-' + pad(t.getMonth() + 1) + '-' + pad(t.getDate());
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var bad = [];
+        [svc, nm, date, time].forEach(function (el) { var empty = !el.value.trim(); el.setAttribute('aria-invalid', String(empty)); if (empty) bad.push(el); });
+        if (bad.length) { msg.textContent = 'Выберите услугу, день и время и напишите, как к вам обращаться.'; bad[0].focus(); return; }
+        if (dayOff(date.value)) { date.setAttribute('aria-invalid', 'true'); msg.textContent = 'В воскресенье и понедельник выходной. Выберите день со вторника по субботу.'; date.focus(); return; }
+        var d = '';
+        if (date.value) { var p = date.value.split('-'); d = new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString('ru-RU', { weekday: 'long', day: 'numeric', month: 'long' }); }
+        var text = 'Здравствуйте, Алёна! Меня зовут ' + nm.value.trim() + '. Хочу записаться: ' + svc.value + '.' +
+          ' Удобный день: ' + d + ', время: ' + time.value + '.' +
+          (note.value.trim() ? ' Комментарий: ' + note.value.trim() : '');
+        var url = 'https://wa.me/79773593590?text=' + encodeURIComponent(text);
+        msg.textContent = '';
+        document.getElementById('bf-s-svc').textContent = svc.value;
+        document.getElementById('bf-s-when').textContent = d + ', ' + time.value;
+        document.getElementById('bf-s-name').textContent = nm.value.trim();
+        document.getElementById('bf-wa').href = url;
+        done.hidden = false; form.classList.add('is-done'); done.focus();
+        window.open(url, '_blank', 'noopener');
+      });
+      form.addEventListener('input', function (e) { if (e.target.hasAttribute && e.target.hasAttribute('aria-invalid')) e.target.setAttribute('aria-invalid', 'false'); });
     })();
 
     var act = document.getElementById('raboty');
