@@ -5,10 +5,10 @@
 <meta name="robots" content="noindex, nofollow" data-publish>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Фея педикюра и маникюра · Алёна Ешану, Полярные Зори</title>
-<meta name="description" content="Фея педикюра и маникюра в Полярных Зорях: маникюр, педикюр, подология, парафин. Алёна Ешану, шесть лет опыта, цена называется до работы.">
+<meta name="description" content="Фея педикюра и маникюра в Полярных Зорях: маникюр, педикюр, уход за проблемными ногтями, парафин. Алёна Ешану, шесть лет опыта, цена называется до работы.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Фея педикюра и маникюра · Алёна Ешану">
-<meta property="og:description" content="Маникюр, педикюр и подология в Полярных Зорях. Шесть лет опыта, цена до работы.">
+<meta property="og:description" content="Маникюр, педикюр и уход за проблемными ногтями в Полярных Зорях. Шесть лет опыта, цена до работы.">
 <meta property="og:image" content="https://ant-site.github.io/feya-nogti/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -132,14 +132,20 @@
   .index a small { font-size: var(--v-t-xs); font-variant-numeric: tabular-nums; color: var(--v-accent-deep); letter-spacing: .06em; }
   @media (hover: hover) and (pointer: fine) { .index a:hover { color: var(--v-ink); } }
   .bar .v-btn { padding: .75em 1.3em; }
+  .bar__short { display: none; }
+  .bar__tel { display: inline-flex; align-items: center; gap: .55em; min-height: 44px; min-width: 44px; justify-content: center; color: var(--v-ink); text-decoration: none; border: 1px solid var(--v-hair-strong); border-radius: 999px; padding: 0 .85em; font-size: var(--v-t-sm); white-space: nowrap; }
+  .bar__tel:focus-visible { outline: 2px solid var(--v-accent); outline-offset: 2px; }
+  @media (hover: hover) and (pointer: fine) { .bar__tel:hover { border-color: var(--v-accent-deep); } }
+  @media (max-width: 1180px) { .bar__num { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } .bar__tel { padding: 0; width: 44px; } }
   @media (max-width: 860px) {
     .index { gap: var(--v-4); font-size: var(--v-t-xs); }
-    .index a small, .index a[data-top] { display: none; }
+    .index a small { display: none; }
     .bar .v-btn { padding: .65em 1em; }
   }
   @media (max-width: 600px) {
-    .bar__mark span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-    .bar__mark i { width: .6rem; height: .6rem; }
+    .bar__full { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .bar__short { display: inline; }
+    .bar { gap: var(--v-3); }
     .index { gap: var(--v-3); }
     .index a[data-long] { display: none; }
     .only-touch { display: inline; }
@@ -310,6 +316,7 @@
   .bf select:focus-visible, .bf input:focus-visible, .bf textarea:focus-visible { outline: 2px solid var(--v-accent); outline-offset: 1px; }
   .bf [aria-invalid="true"] { border-color: var(--v-accent-deep); box-shadow: 0 0 0 2px rgb(168 67 45 / .18); }
   .bf .v-btn { justify-self: start; border: 0; cursor: pointer; font: inherit; font-weight: 600; background: var(--v-accent); color: var(--v-accent-ink); }
+  .bf__consent { font-size: var(--v-t-xs); color: var(--v-ink-soft); max-width: 40ch; text-wrap: pretty; }
   .bf__msg { min-height: 1.4em; font-size: var(--v-t-sm); color: var(--v-ink-soft); text-wrap: pretty; }
   .bf__msg a { color: var(--v-ink); text-decoration: underline; text-underline-offset: .18em; }
   .bf.is-done > :not(.bf__done) { display: none; }
@@ -353,6 +360,18 @@
   .ba__grid img { display: block; width: 100%; height: auto; }
   .ba__grid span { display: grid; gap: .15em; padding-top: var(--v-3); font-size: var(--v-t-sm); color: var(--v-ink-soft); }
   .ba__grid b { color: var(--v-ink); font-weight: 500; }
+  .clean__copy .facts { margin-top: var(--v-6); }
+  .faq { margin-top: var(--v-6); display: grid; gap: 0; max-width: 46ch; }
+  .faq__h { font-family: var(--v-font-display); font-weight: 400; font-size: var(--v-t-lg); margin-bottom: var(--v-3); }
+  .faq details { border-top: 1px solid var(--v-hair); }
+  .faq details:last-child { border-bottom: 1px solid var(--v-hair); }
+  .faq summary { cursor: pointer; padding: var(--v-3) 0; min-height: 44px; display: flex; align-items: center; font-size: var(--v-t-sm); font-weight: 500; list-style: none; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: '+'; margin-left: auto; padding-left: var(--v-3); color: var(--v-accent-deep); font-size: 1.3em; line-height: 1; }
+  .faq details[open] summary::after { content: '–'; }
+  .faq summary:focus-visible { outline: 2px solid var(--v-accent); outline-offset: 2px; }
+  .faq details p { padding: 0 0 var(--v-4); color: var(--v-ink-soft); font-size: var(--v-t-sm); text-wrap: pretty; }
+  .faq details a { color: var(--v-ink); text-decoration: underline; text-underline-offset: .18em; }
   .edu { margin-top: var(--v-7); max-width: 46ch; }
   .edu h3 { font-family: var(--v-font-display); font-weight: 400; font-size: var(--v-t-lg); }
   .edu ul { list-style: none; margin: var(--v-4) 0 0; padding: 0; }
@@ -360,11 +379,11 @@
   .edu li:last-child { border-bottom: 1px solid var(--v-hair); }
   .edu li b { font-weight: 500; }
   .edu li span { color: var(--v-ink-soft); }
-  .edu__pics { margin-top: var(--v-5); display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--v-5); padding: var(--v-6); background: #2a211d; border-radius: var(--v-radius); box-shadow: var(--v-e1); }
-  .edu__pics a { display: grid; gap: var(--v-3); align-content: start; cursor: zoom-in; color: rgb(246 242 236 / .82); font-size: var(--v-t-sm); text-align: center; text-wrap: balance; text-decoration: none; }
-  .edu__pics img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; padding: 7px; background: #3a2e28; border: 1px solid rgb(232 200 160 / .55); border-radius: 4px; box-shadow: 0 10px 24px rgb(0 0 0 / .45), inset 0 0 0 1px rgb(0 0 0 / .35); transition: transform .35s var(--v-ease-out); }
+  .edu__pics { margin-top: var(--v-5); display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--v-5); padding: var(--v-6); background: #7d6a5f; border-radius: var(--v-radius); box-shadow: 0 1px 2px rgb(60 40 30 / .12); }
+  .edu__pics a { display: grid; gap: var(--v-3); align-content: start; cursor: zoom-in; color: #fffaf4; font-size: var(--v-t-sm); text-align: center; text-wrap: balance; text-decoration: none; }
+  .edu__pics img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; padding: 7px; background: #a08d80; border: 1px solid rgb(255 244 228 / .55); border-radius: 4px; box-shadow: 0 6px 16px rgb(50 30 20 / .22); transition: transform .35s var(--v-ease-out); }
   .edu__pics a:hover img, .edu__pics a:focus-visible img { transform: translateY(-3px); }
-  .edu__pics a:focus-visible { outline: 2px solid #e8c8a0; outline-offset: 4px; border-radius: 4px; }
+  .edu__pics a:focus-visible { outline: 2px solid #fff4e4; outline-offset: 4px; border-radius: 4px; }
   @media (prefers-reduced-motion: reduce) { .edu__pics img { transition: none; } }
   @media (max-width: 560px) { .edu__pics { grid-template-columns: 1fr 1fr; gap: var(--v-4); padding: var(--v-4); } }
   .master__more { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--v-8) var(--v-9); align-items: start; padding-top: var(--v-6); border-top: 1px solid var(--v-hair); }
@@ -440,14 +459,15 @@
   <span data-v-progress></span>
 
   <header class="bar">
-    <a class="bar__mark" href="#top"><i aria-hidden="true"></i><span>Фея педикюра и маникюра</span></a>
+    <a class="bar__mark" href="#top"><i aria-hidden="true"></i><span class="bar__full">Фея педикюра и маникюра</span><span class="bar__short" aria-hidden="true">Фея</span></a>
     <nav class="index" aria-label="Индекс">
-      <a href="#raboty" data-top><small>01–05</small>Работы</a>
+      <a href="#raboty"><small>01–05</small>Работы</a>
       <a href="#pomoch" data-long><small>06</small>С чем пришли</a>
       <a href="#ceny"><small>07</small>Цены</a>
       <a href="#priem" data-long><small>08</small>Приём</a>
-      <a href="#master"><small>09</small>Мастер</a>
+      <a href="#master" data-long><small>09</small>Мастер</a>
     </nav>
+    <a class="bar__tel" href="tel:+79773593590" aria-label="Позвонить Алёне: +7 977 359-35-90"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6.6 3.5c.5-.5 1.3-.5 1.8 0l2 2.3c.4.5.4 1.200 0 1.700l-1.200 1.400c.9 1.900 2.400 3.500 4.300 4.500l1.500-1.100c.5-.4 1.200-.4 1.700 0l2.400 1.900c.5.4.6 1.200.1 1.700l-1.200 1.400c-.7.8-1.800 1.100-2.800.8C10.400 17.600 6.400 13.600 4.400 8.600c-.4-1 0-2.100.7-2.800z" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linejoin="round"/></svg><span class="bar__num">+7 977 359-35-90</span></a>
     <a class="v-btn" href="#forma">Записаться</a>
   </header>
 
@@ -471,7 +491,7 @@
         <div class="v-copy v-copy--lead hero__copy" data-v-cue="0 0.8 0">
           <span class="v-label">Фея педикюра и маникюра · Алёна Ешану</span>
           <h1 class="v-display nd nd--xl">Маникюр и педикюр в Полярных Зорях лёгкой рукой</h1>
-          <p>Подология и сложные стопы там же. Шесть лет опыта, цену называю до работы.</p>
+          <p>Проблемные ногти и сложные стопы там же. Шесть лет опыта, цену называю до работы.</p>
           <a class="v-btn" href="#forma">Записаться</a>
         </div>
       </div>
@@ -492,7 +512,7 @@
               <span class="v-label">Работы</span>
               <h2 class="v-display nd nd--lg">Руки как есть, без фильтров</h2>
               <p>Настоящие работы Алёны. Нажмите на фото, чтобы рассмотреть поближе.</p>
-              <div class="gal__price"><span>Нужны ноги или больной ноготь – ниже есть и про это.</span></div>
+              <div class="gal__price"><span>Нужны ноги или проблемный ноготь – ниже есть и про это.</span></div>
             </div>
 
             <figure class="work" data-work="Нюд">
@@ -607,7 +627,7 @@
           <div class="chips" role="group" aria-label="Выберите, с чем пришли">
             <button class="chip" type="button" data-pick="m" aria-pressed="true">Маникюр</button>
             <button class="chip" type="button" data-pick="p" aria-pressed="false">Педикюр</button>
-            <button class="chip" type="button" data-pick="s" aria-pressed="false">Больные ногти</button>
+            <button class="chip" type="button" data-pick="s" aria-pressed="false">Проблемные ногти</button>
           </div>
           <div class="pick__out" id="pick-out" aria-live="polite">
             <h3 id="pick-title">Руки: маникюр и покрытие</h3>
@@ -637,10 +657,10 @@
         </div>
         <ul class="ba__grid" data-v-in data-v-stagger="50">
           <li><a href="assets/real/b0080.webp" data-zoom><img src="assets/real/b0080.webp" width="750" height="1000" alt="Ортониксия: титановая нить: Вросший ноготь исправляют титановой нитью." loading="lazy"></a><span><b>Ортониксия: титановая нить</b>Вросший ноготь исправляют титановой нитью.</span></li>
-          <li><a href="assets/real/b0078.webp" data-zoom><img src="assets/real/b0078.webp" width="1000" height="750" alt="Вросший ноготь: До и после: воспаление ушло." loading="lazy"></a><span><b>Вросший ноготь</b>До и после: воспаление ушло.</span></li>
-          <li><a href="assets/real/b0076.webp" data-zoom><img src="assets/real/b0076.webp" width="868" height="1000" alt="Ногти на ногах: До и после обработки." loading="lazy"></a><span><b>Ногти на ногах</b>До и после обработки.</span></li>
+          <li><a href="assets/real/b0078.webp" data-zoom><img src="assets/real/b0078.webp" width="1000" height="750" alt="Вросший ноготь: до и после" loading="lazy"></a><span><b>Вросший ноготь</b>До и после.</span></li>
+          <li><a href="assets/real/b0076.webp" data-zoom><img src="assets/real/b0076.webp" width="660" height="819" alt="Ногти на ногах: До и после обработки." loading="lazy"></a><span><b>Ногти на ногах</b>До и после обработки.</span></li>
           <li><a href="assets/real/b0079.webp" data-zoom><img src="assets/real/b0079.webp" width="811" height="1000" alt="Ногти на ногах: До и после." loading="lazy"></a><span><b>Ногти на ногах</b>До и после.</span></li>
-          <li><a href="assets/real/b0050.webp" data-zoom><img src="assets/real/b0050.webp" width="620" height="1000" alt="Пятки: До и после педикюра." loading="lazy"></a><span><b>Пятки</b>До и после педикюра.</span></li>
+          <li><a href="assets/real/b0050.webp" data-zoom><img src="assets/real/b0050.webp" width="569" height="956" alt="Пятки: До и после педикюра." loading="lazy"></a><span><b>Пятки</b>До и после педикюра.</span></li>
           <li><a href="assets/real/b0069.webp" data-zoom><img src="assets/real/b0069.webp" width="750" height="1000" alt="Пятки: До и после." loading="lazy"></a><span><b>Пятки</b>До и после.</span></li>
           <li><a href="assets/real/b0053.webp" data-zoom><img src="assets/real/b0053.webp" width="750" height="1000" alt="Стопа: До и после." loading="lazy"></a><span><b>Стопа</b>До и после.</span></li>
         </ul>
@@ -696,12 +716,12 @@
           <div class="pg__blank" aria-hidden="true"></div>
         </article>
         <article class="pg" style="--z:3" aria-label="Страница 4 из 6">
-          <header class="pg__head"><span class="pg__num">04 / 05</span><h3 class="pg__title">Подология</h3></header>
+          <header class="pg__head"><span class="pg__num">04 / 05</span><h3 class="pg__title">Проблемные ногти</h3></header>
           <ul class="rows">
-            <li><h4>Консультация</h4><span class="price v-nums">1000 ₽</span><p>Осмотр, разговор и план работ.</p></li>
-            <li><h4>Установка титановой нити</h4><span class="price v-nums">3000 ₽</span><p>Ортониксия: исправляю вросший ноготь.</p></li>
+            <li><h4>Осмотр</h4><span class="price v-nums">1000 ₽</span><p>Смотрю ногти и стопы, говорим о том, что можно сделать, и составляем план работ.</p></li>
+            <li><h4>Установка титановой нити</h4><span class="price v-nums">3000 ₽</span><p>Ортониксия: титановая нить для вросшего ногтя.</p></li>
             <li><h4>Протезирование ногтя</h4><span class="time">руки / ноги</span><span class="price v-nums">400 / 600 ₽</span><p>Восстанавливаю повреждённую ногтевую пластину.</p></li>
-            <li><h4>Сложные стопы: онихогрифоз и другие нарушения</h4><span class="price v-nums">после осмотра</span><p>Утолщённые, деформированные ногти. Цену называю после осмотра.</p></li>
+            <li><h4>Утолщённые и деформированные ногти (онихогрифоз)</h4><span class="price v-nums">после осмотра</span><p>Сложные стопы. Цену называю после осмотра, до начала работы.</p></li>
           </ul>
           <div class="pg__blank" aria-hidden="true"></div>
         </article>
@@ -720,7 +740,7 @@
           <button type="button" class="book__tab" data-go="0"><span>Маникюр</span><i></i></button>
           <button type="button" class="book__tab" data-go="1"><span>Педикюр</span><i></i></button>
           <button type="button" class="book__tab" data-go="2"><span>Дизайн</span><i></i></button>
-          <button type="button" class="book__tab" data-go="3"><span>Больные ногти</span><i></i></button>
+          <button type="button" class="book__tab" data-go="3"><span>Проблемные ногти</span><i></i></button>
           <button type="button" class="book__tab" data-go="4"><span>Парафин</span><i></i></button>
             </div>
             <div class="book__ctl">
@@ -748,11 +768,18 @@
           <ul class="facts">
             <li><b>Осмотр и разговор</b><span>Что с ногтями и кожей, что можно делать, а чего пока нельзя</span></li>
             <li><b>План и цена</b><span>Называю до начала, а не по ходу работы</span></li>
-            <li><b>Подология отдельно от дизайна</b><span>Для больных ногтей нужна не красота, а уход и лечение: так и работаю</span></li>
+            <li><b>Проблемные ногти отдельно от дизайна</b><span>Для проблемных ногтей нужен аккуратный уход, а не красота. Это эстетическая обработка, не лечение: при воспалении, боли и грибке сначала к врачу</span></li>
           </ul>
+          <div class="faq" data-v-in>
+            <h3 class="faq__h">Про проблемные ногти простыми словами</h3>
+            <details><summary>Какие ногти называют проблемными?</summary><p>Вросшие, утолщённые и деформированные ногти, сухая кожа и трещины на пятках: то, с чем обычного педикюра мало.</p></details>
+            <details><summary>Что, если ноготь воспалён, болит или есть грибок?</summary><p>Сначала нужен врач: это медицинский вопрос. Алёна делает эстетическую обработку, а не лечение.</p></details>
+            <details><summary>Сколько это стоит?</summary><p>Осмотр – 1000 ₽, установка титановой нити – 3000 ₽, сложные случаи – после осмотра. Цену называю до начала работы.</p></details>
+            <details><summary>Как записаться, если не любите интернет?</summary><p>Позвоните: <a href="tel:+79773593590">+7 977 359-35-90</a>. Можно прийти и по записи, которую оформляет Алёна лично.</p></details>
+          </div>
           <div class="cta">
             <a class="v-btn" href="#forma">Записаться</a>
-            <span>Не знаете, к кому идти с больным ногтем: напишите, скажу, чем помогу.</span>
+            <span>Не знаете, к кому идти с проблемным ногтем: напишите, отвечу, возьмусь ли за работу.</span>
           </div>
         </div>
       </div>
@@ -767,11 +794,11 @@
           <div class="lines">
             <p>Маникюр и педикюр делаю шесть лет: у каждого ногти свои, и подход к каждым свой.</p>
             <p>Если с ногтем беда, начинаем с осмотра и честного разговора, а не с покрытия поверх проблемы.</p>
-            <p>Работаю со стопами со сложными нарушениями, исправляю вросшие ногти, восстанавливаю и протезирую ногтевые пластины.</p>
+            <p>Работаю со стопами со сложными стопами, корректирую вросшие ногти, восстанавливаю и протезирую ногтевые пластины.</p>
           </div>
         </div>
         <figure class="master__fig" data-v-reveal="up" data-v-reveal-at="0.12 0.5">
-          <img src="assets/master.webp" alt="Алёна Ешану, мастер маникюра, педикюра и подологии" width="900" height="1200" loading="lazy">
+          <img src="assets/master.webp" alt="Алёна Ешану, мастер маникюра и педикюра" width="900" height="1200" loading="lazy">
           <div class="v-scrim v-scrim--light v-scrim--band" aria-hidden="true"></div>
           <figcaption>
             <b>Алёна Ешану</b>
@@ -785,7 +812,7 @@
               <p>Мои пятки теперь как у младенца, кожа идеально гладкая, а пальчики выглядят настолько эстетично и аккуратно, что я не могу ими налюбоваться.</p>
               <p>Мастер Алёна – просто волшебница с «золотыми руками». Сеанс проходил в приятной, расслабляющей атмосфере; всё сделано мега-профессионально, бережно и стерильно, что для меня безумно важно!</p>
               <p>Вышла из салона с ощущением, будто я не шла, а летела от лёгкости. Огромное спасибо за эти моменты блаженства и радости. Теперь на педикюр – только к Алёне!</p>
-              <cite>Антонина, отзыв клиентки · 13 сентября · <a href="https://vk.ru/clip182916351_456239246" target="_blank" rel="noopener">читать во ВКонтакте</a></cite>
+              <cite>Антонина (автор сайта), клиентка Алёны · 13 сентября · <a href="https://vk.ru/clip182916351_456239246" target="_blank" rel="noopener">читать во ВКонтакте</a></cite>
             </blockquote>
             <blockquote class="review review--second">
               <p>Я у Алёны делала педикюр и маникюр в августе 2026 года. Первое, что хочется отметить – это неукоснительное соблюдение гигиены, обработка инструментов 10/10.</p>
@@ -801,12 +828,12 @@
                 <li><b>Международная академия «Интернационал», Москва</b><span>Диплом мастера по маникюру, педикюру и наращиванию ногтей</span></li>
               </ul>
               <div class="edu__pics">
-                <a href="assets/real/e01.webp" data-zoom><img src="assets/real/e01.webp" alt="Диплом Международной академии «Интернационал»: мастер по маникюру, педикюру и наращиванию ногтей" width="1280" height="960" loading="lazy"><span>Диплом мастера, Академия «Интернационал»</span></a>
-                <a href="assets/real/e02.webp" data-zoom><img src="assets/real/e02.webp" alt="Свидетельство Nail Couture: специалист по педикюру, 72 академических часа" width="1280" height="960" loading="lazy"><span>Свидетельство, специалист по педикюру, 2023</span></a>
-                <a href="assets/real/e03.webp" data-zoom><img src="assets/real/e03.webp" alt="Сертификат Nail Couture: педикюр Perfect foot 2.0" width="1280" height="960" loading="lazy"><span>Педикюр Perfect foot 2.0, 2023</span></a>
-                <a href="assets/real/e04.webp" data-zoom><img src="assets/real/e04.webp" alt="Сертификат Nail Couture: педикюр Perfect foot 1.0" width="1280" height="960" loading="lazy"><span>Педикюр Perfect foot 1.0, 2023</span></a>
-                <a href="assets/real/e05.webp" data-zoom><img src="assets/real/e05.webp" alt="Сертификат Nail Couture: коррекционная система «Титановая нить»" width="1280" height="960" loading="lazy"><span>Титановая нить, 2023</span></a>
-                <a href="assets/real/e06.webp" data-zoom><img src="assets/real/e06.webp" alt="Сертификат Международной академии «Интернационал»: маникюр, педикюр, наращивание ногтей" width="1280" height="960" loading="lazy"><span>Сертификат, Академия «Интернационал»</span></a>
+                <a href="assets/real/e01.webp" data-zoom><img src="assets/real/e01.webp" alt="Диплом Международной академии «Интернационал»: мастер по маникюру, педикюру и наращиванию ногтей" width="1280" height="960" loading="lazy"><span>Диплом, «Интернационал»</span></a>
+                <a href="assets/real/e02.webp" data-zoom><img src="assets/real/e02.webp" alt="Свидетельство Nail Couture: специалист по педикюру, 72 академических часа" width="1280" height="960" loading="lazy"><span>Свидетельство, 2023</span></a>
+                <a href="assets/real/e03.webp" data-zoom><img src="assets/real/e03.webp" alt="Сертификат Nail Couture: педикюр Perfect foot 2.0" width="1280" height="960" loading="lazy"><span>Perfect foot 2.0</span></a>
+                <a href="assets/real/e04.webp" data-zoom><img src="assets/real/e04.webp" alt="Сертификат Nail Couture: педикюр Perfect foot 1.0" width="1280" height="960" loading="lazy"><span>Perfect foot 1.0</span></a>
+                <a href="assets/real/e05.webp" data-zoom><img src="assets/real/e05.webp" alt="Сертификат Nail Couture: коррекционная система «Титановая нить»" width="1280" height="960" loading="lazy"><span>Титановая нить</span></a>
+                <a href="assets/real/e06.webp" data-zoom><img src="assets/real/e06.webp" alt="Сертификат Международной академии «Интернационал»: маникюр, педикюр, наращивание ногтей" width="1280" height="960" loading="lazy"><span>Сертификат, «Интернационал»</span></a>
               </div>
             </div>
         </div>
@@ -821,7 +848,8 @@
           <h2 class="v-display nd nd--lg">Запишитесь прямо здесь</h2>
           <p>Выберите услугу, день и время приёма. Заявка уйдёт Алёне в WhatsApp, и она подтвердит запись ответом.</p>
           <ul class="terms">
-            <li><span><b>Адрес:</b> Полярные Зори, улица Пушкина, 4</span></li>
+            <li><span><b>Адрес:</b> Полярные Зори, улица Пушкина, 4 · <a href="https://yandex.ru/maps/?text=%D0%9F%D0%BE%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5%20%D0%97%D0%BE%D1%80%D0%B8%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9F%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%B0%2C%204" target="_blank" rel="noopener">показать на карте</a></span></li>
+            <li><span><b>ВКонтакте:</b> <a href="https://vk.ru/id618342856" target="_blank" rel="noopener">страница Алёны</a></span></li>
             <li><span><b>Часы:</b> вторник – суббота, приём с 9:00 до 21:30</span></li>
             <li><span><b>Выходные:</b> воскресенье и понедельник</span></li>
             <li><span><b>Запись:</b> раз в 2,5 часа, на 09:00, 11:30, 14:00, 16:30, 19:00</span></li>
@@ -839,11 +867,11 @@
               <option>Педикюр без покрытия – 3000 ₽</option>
               <option>Педикюр с покрытием – 3500 ₽</option>
               <option>Дизайн, френч, ремонт ногтя</option>
-              <option>Консультация (больные ногти) – 1000 ₽</option>
+              <option>Осмотр (проблемные ногти) – 1000 ₽</option>
               <option>Установка титановой нити – 3000 ₽</option>
               <option>Протезирование ногтя</option>
               <option>Горячий или холодный парафин</option>
-              <option>Не знаю, нужна консультация</option>
+              <option>Не знаю, нужен осмотр</option>
             </select>
           </label>
           <div class="bf__row">
@@ -860,18 +888,19 @@
             </label>
           </div>
           <label class="bf__f"><span>Ваше имя</span><input type="text" id="bf-name" autocomplete="given-name" required placeholder="Как к вам обращаться"></label>
-          <label class="bf__f"><span>Комментарий <i>необязательно</i></span><textarea id="bf-note" rows="3" placeholder="Например: вросший ноготь, нужна консультация"></textarea></label>
+          <label class="bf__f"><span>Комментарий <i>необязательно</i></span><textarea id="bf-note" rows="3" placeholder="Например: хочу телесный цвет, форма миндаль"></textarea></label>
           <button class="v-btn" type="submit">Отправить в WhatsApp</button>
+          <p class="bf__consent">Имя и текст заявки отправляются только Алёне в WhatsApp, сайт их не сохраняет.</p>
           <p class="bf__msg" id="bf-msg" role="status" aria-live="polite"></p>
           <div class="bf__done" id="bf-done" role="status" tabindex="-1" hidden>
             <svg class="bf__check" viewBox="0 0 48 48" width="56" height="56" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M14 25.5l7 7 13-15"/></svg>
-            <h3>Заявка составлена</h3>
+            <h3>Почти готово</h3>
             <dl class="bf__sum">
               <div><dt>Услуга</dt><dd id="bf-s-svc"></dd></div>
               <div><dt>День и время</dt><dd id="bf-s-when"></dd></div>
               <div><dt>Имя</dt><dd id="bf-s-name"></dd></div>
             </dl>
-            <p><b>Осталось нажать «Отправить» в WhatsApp</b>: текст заявки уже написан. Когда Алёна получит сообщение, она ответит и подтвердит время записи.</p>
+            <p><b>Осталось один раз нажать «Отправить» в WhatsApp.</b> Текст заявки уже написан, но пока вы не отправили его, Алёна ничего не получит. Получив сообщение, она ответит и подтвердит время.</p>
             <div class="bf__act">
               <a class="v-btn" id="bf-wa" href="#" target="_blank" rel="noopener">Открыть WhatsApp</a>
               <button type="button" class="bf__edit" id="bf-edit">Изменить заявку</button>
@@ -892,6 +921,7 @@
               <div class="close__btns">
                 <a class="v-btn" href="https://wa.me/79773593590?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F." target="_blank" rel="noopener">Записаться</a>
                 <a class="v-btn v-btn--ghost" href="tel:+79773593590">Позвонить</a>
+                <a class="v-btn v-btn--ghost" href="https://vk.ru/id618342856" target="_blank" rel="noopener">ВКонтакте</a>
               </div>
             </div>
             <div class="close__meta" data-v-cue="0.1">
@@ -899,14 +929,15 @@
               <span><b>Алёна Ешану</b></span>
               <span>Полярные Зори, улица Пушкина, 4 – со стороны памятника воинам-интернационалистам</span>
               <span>Вторник – суббота, приём с 9:00 до 21:30. Воскресенье и понедельник – выходные</span>
-              <span>Маникюр, педикюр, подология, парафин</span>
+              <span>Маникюр, педикюр, проблемные ногти, парафин</span>
               <span>Приём по записи</span>
-              <a href="https://vk.ru/id618342856" target="_blank" rel="noopener">Или напишите ВКонтакте</a>
+              <a href="https://yandex.ru/maps/?text=%D0%9F%D0%BE%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5%20%D0%97%D0%BE%D1%80%D0%B8%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9F%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%B0%2C%204" target="_blank" rel="noopener">Показать на карте</a>
+              <a href="https://vk.ru/id618342856" target="_blank" rel="noopener">Страница Алёны ВКонтакте</a>
             </div>
           </div>
           <footer class="foot">
             <span>Фея педикюра и маникюра · Полярные Зори</span>
-            <span>Маникюр, педикюр, подология</span>
+            <span>Маникюр, педикюр, проблемные ногти</span>
             <span class="sign"><img src="assets/brand-mark.webp" alt="" width="44" height="44" loading="lazy">Автор сайта: Антонина Логутенкова</span>
           </footer>
         </div>
@@ -926,7 +957,7 @@
   "@context": "https://schema.org",
   "@type": "BeautySalon",
   "name": "Фея педикюра и маникюра",
-  "description": "Маникюр, педикюр, подология и парафин в Полярных Зорях. Алёна Ешану.",
+  "description": "Маникюр, педикюр, уход за проблемными ногтями и парафин в Полярных Зорях. Алёна Ешану.",
   "url": "https://ant-site.github.io/feya-nogti",
   "telephone": "+79773593590",
   "openingHours": "Tu-Sa 09:00-21:30",
@@ -944,7 +975,7 @@
       var topics = {
         m: { t: 'Руки: маникюр и покрытие', p: 'Маникюр без покрытия или с гель-лаком. Форму и длину подбираем под вашу жизнь, а не под картинку.' },
         p: { t: 'Ноги: педикюр', p: 'Педикюр: обработка стоп и ногтей, с покрытием или без.' },
-        s: { t: 'Больной ноготь: подология', p: 'Сложные стопы, онихогрифоз, вросшие ногти (ортониксия, титановые нити), реставрация и протезирование ногтей. Сначала осмотр, потом план и цена.' }
+        s: { t: 'Проблемный ноготь', p: 'Сложные стопы, онихогрифоз, вросшие ногти (ортониксия, титановые нити), реставрация и протезирование ногтей. Сначала осмотр, потом план и цена.' }
       };
       var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
       var pics = Array.prototype.slice.call(document.querySelectorAll('[data-pic]'));
@@ -974,7 +1005,7 @@
       var autoBtn = document.getElementById('book-auto');
       var rings = book.querySelector('.book__rings');
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var DELAY = 6500, cur = 0, auto = !reduce, visible = false, held = false, timer = null;
+      var DELAY = 12000, cur = 0, auto = !reduce, visible = false, held = false, timer = null;
       book.style.setProperty('--book-t', DELAY + 'ms');
       for (var r = 0; r < 9; r++) rings.appendChild(document.createElement('i'));
       function render() {
@@ -1006,6 +1037,7 @@
         if (auto) go((cur + 1) % pages.length, false); else schedule();
       });
       var wrap = book.parentNode;
+      wrap.addEventListener('pointerdown', function () { if (auto) { auto = false; autoBtn.setAttribute('aria-pressed', 'false'); schedule(); } });
       wrap.addEventListener('mouseenter', function () { held = true; schedule(); });
       wrap.addEventListener('mouseleave', function () { held = false; schedule(); });
       wrap.addEventListener('focusin', function () { held = true; schedule(); });
