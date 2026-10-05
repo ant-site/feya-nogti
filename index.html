@@ -360,15 +360,18 @@
   .edu li:last-child { border-bottom: 1px solid var(--v-hair); }
   .edu li b { font-weight: 500; }
   .edu li span { color: var(--v-ink-soft); }
-  .edu__pics { margin-top: var(--v-4); display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--v-3); }
-  .edu__pics a { display: block; border-radius: 6px; overflow: hidden; box-shadow: var(--v-e1); cursor: zoom-in; }
-  .edu__pics img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .edu__pics { margin-top: var(--v-5); display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--v-5); padding: var(--v-6); background: #2a211d; border-radius: var(--v-radius); box-shadow: var(--v-e1); }
+  .edu__pics a { display: grid; gap: var(--v-3); align-content: start; cursor: zoom-in; color: rgb(246 242 236 / .82); font-size: var(--v-t-sm); text-align: center; text-wrap: balance; text-decoration: none; }
+  .edu__pics img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; padding: 7px; background: #3a2e28; border: 1px solid rgb(232 200 160 / .55); border-radius: 4px; box-shadow: 0 10px 24px rgb(0 0 0 / .45), inset 0 0 0 1px rgb(0 0 0 / .35); transition: transform .35s var(--v-ease-out); }
+  .edu__pics a:hover img, .edu__pics a:focus-visible img { transform: translateY(-3px); }
+  .edu__pics a:focus-visible { outline: 2px solid #e8c8a0; outline-offset: 4px; border-radius: 4px; }
+  @media (prefers-reduced-motion: reduce) { .edu__pics img { transition: none; } }
+  @media (max-width: 560px) { .edu__pics { grid-template-columns: 1fr 1fr; gap: var(--v-4); padding: var(--v-4); } }
   .master__more { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--v-8) var(--v-9); align-items: start; padding-top: var(--v-6); border-top: 1px solid var(--v-hair); }
   .master__more .review, .master__more .edu { margin-top: 0; max-width: none; }
   .master__more .review--second { margin-top: 0; }
   .master__more .edu { grid-column: 1 / -1; border-top: 1px solid var(--v-hair); padding-top: var(--v-6); }
   .master__more .edu ul { max-width: 46ch; }
-  @media (min-width: 861px) { .master__more .edu__pics { grid-template-columns: repeat(6, 1fr); } }
   @media (max-width: 860px) { .master__more { grid-template-columns: 1fr; gap: var(--v-7); } }
   .review { margin-top: var(--v-6); max-width: 46ch; padding-left: var(--v-4); border-left: 3px solid var(--v-accent); }
   .review p { color: var(--v-ink); font-size: var(--v-t-sm); line-height: 1.6; text-wrap: pretty; }
@@ -798,12 +801,12 @@
                 <li><b>Международная академия «Интернационал», Москва</b><span>Диплом мастера по маникюру, педикюру и наращиванию ногтей</span></li>
               </ul>
               <div class="edu__pics">
-                <a href="assets/real/d0086.webp" data-zoom><img src="assets/real/d0086.webp" alt="Сертификат Nail Couture: коррекционная система «Титановая нить»" loading="lazy"></a>
-                <a href="assets/real/d0087.webp" data-zoom><img src="assets/real/d0087.webp" alt="Сертификат Nail Couture: педикюр Perfect foot 2.0" loading="lazy"></a>
-                <a href="assets/real/d0089.webp" data-zoom><img src="assets/real/d0089.webp" alt="Сертификат Nail Couture: педикюр Perfect foot 1.0" loading="lazy"></a>
-                <a href="assets/real/d0088.webp" data-zoom><img src="assets/real/d0088.webp" alt="Сертификат Международной академии «Интернационал»: маникюр, педикюр, наращивание ногтей" loading="lazy"></a>
-                <a href="assets/real/d0090.webp" data-zoom><img src="assets/real/d0090.webp" alt="Диплом Международной академии «Интернационал»: мастер по маникюру, педикюру и наращиванию ногтей" loading="lazy"></a>
-                <a href="assets/real/d0091.webp" data-zoom><img src="assets/real/d0091.webp" alt="Свидетельство Nail Couture: специалист по педикюру, 72 академических часа, 2023" loading="lazy"></a>
+                <a href="assets/real/e01.webp" data-zoom><img src="assets/real/e01.webp" alt="Диплом Международной академии «Интернационал»: мастер по маникюру, педикюру и наращиванию ногтей" width="1280" height="960" loading="lazy"><span>Диплом мастера, Академия «Интернационал»</span></a>
+                <a href="assets/real/e02.webp" data-zoom><img src="assets/real/e02.webp" alt="Свидетельство Nail Couture: специалист по педикюру, 72 академических часа" width="1280" height="960" loading="lazy"><span>Свидетельство, специалист по педикюру, 2023</span></a>
+                <a href="assets/real/e03.webp" data-zoom><img src="assets/real/e03.webp" alt="Сертификат Nail Couture: педикюр Perfect foot 2.0" width="1280" height="960" loading="lazy"><span>Педикюр Perfect foot 2.0, 2023</span></a>
+                <a href="assets/real/e04.webp" data-zoom><img src="assets/real/e04.webp" alt="Сертификат Nail Couture: педикюр Perfect foot 1.0" width="1280" height="960" loading="lazy"><span>Педикюр Perfect foot 1.0, 2023</span></a>
+                <a href="assets/real/e05.webp" data-zoom><img src="assets/real/e05.webp" alt="Сертификат Nail Couture: коррекционная система «Титановая нить»" width="1280" height="960" loading="lazy"><span>Титановая нить, 2023</span></a>
+                <a href="assets/real/e06.webp" data-zoom><img src="assets/real/e06.webp" alt="Сертификат Международной академии «Интернационал»: маникюр, педикюр, наращивание ногтей" width="1280" height="960" loading="lazy"><span>Сертификат, Академия «Интернационал»</span></a>
               </div>
             </div>
         </div>
